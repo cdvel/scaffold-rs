@@ -1,6 +1,5 @@
 [package]
 name = "{{project-name}}"
-lib = { name = "{{project-name | snake_case}}", path = "src/lib.rs" }
 version = "0.1.0"
 edition = "2021"
 description = "{{project-description}}"
