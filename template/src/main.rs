@@ -37,7 +37,7 @@ fn run_app() -> anyhow::Result<()> {
     let config = {{ project-name | snake_case }}::config::Config::load()?;
     tracing::info!("Application started with config: {:?}", config);
 
-    let app = {{project-name}}::app::App::new(config);
+    let app = {{ project-name | snake_case }}::app::App::new(config);
     app.run()?;
 
     tracing::info!("Application completed successfully");
