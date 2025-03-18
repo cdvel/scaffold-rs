@@ -9,13 +9,13 @@ async fn main() -> anyhow::Result<()> {
     // Demo async and time features
     tracing::info!("Running async/time utilities demo");
 
-    let data = {{project-name}}::async_utils::fetch_data("demo-resource").await?;
-    let now = {{project-name}}::time_utils::current_timestamp();
+    let data = {{ project-name | snake_case }}::async_utils::fetch_data("demo-resource").await?;
+    let now = {{ project-name | snake_case }}::time_utils::current_timestamp();
 
     println!("Demo results at {}: {}", now, data);
 
-    {{project-name}}::time_utils::parse_timestamp(&now)
-        .map(|date| {{project-name}}::time_utils::add_days(date, 30))
+    {{ project-name | snake_case}}::time_utils::parse_timestamp(&now)
+        .map(|date| {{ project-name | snake_case }}::time_utils::add_days(date, 30))
         .map(|future| println!("Next check scheduled for: {}", future))
         .ok();
 
@@ -32,9 +32,9 @@ fn main() {
 }
 
 fn run_app() -> anyhow::Result<()> {
-    {{project-name}}::logging::setup(true);
+    {{ project-name | snake_case }}::logging::setup(true);
 
-    let config = {{project-name}}::config::Config::load()?;
+    let config = {{ project-name | snake_case }}::config::Config::load()?;
     tracing::info!("Application started with config: {:?}", config);
 
     let app = {{project-name}}::app::App::new(config);

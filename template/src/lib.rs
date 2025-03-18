@@ -1,6 +1,6 @@
-//! # {{project-name}}
+//! # {{ project-name | snake_case }}
 //!
-//! `{{project-name}}` is a library that {{project-description}}.
+//! `{{ project-name | snake_case }}` is a library that {{ project-description }}.
 
 // Re-export core modules
 pub mod app;
@@ -20,7 +20,7 @@ pub mod time_utils;
 /// # Examples
 ///
 /// ```
-/// use {{project-name}}::calculate;
+/// use {{ project-name | snake_case }}::calculate;
 ///
 /// let result = calculate(10, 2, "divide").unwrap();
 /// assert_eq!(result, 5);

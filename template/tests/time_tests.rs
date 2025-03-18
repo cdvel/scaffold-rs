@@ -1,6 +1,6 @@
 #[cfg(feature = "chrono")]
 mod time_tests {
-    use {{project-name}}::time_utils::{
+    use {{ project_name | snake_case }}::time_utils::{
         current_timestamp, parse_timestamp,
         add_days, days_between, from_unix_timestamp
     };

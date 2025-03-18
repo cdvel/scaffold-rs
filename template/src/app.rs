@@ -15,8 +15,8 @@ use tracing::{debug, info};
 /// # Example
 ///
 /// ```
-/// use {{project-name}}::app::App;
-/// use {{project-name}}::config::Config;
+/// use {{ project-name | snake_case }}::app::App;
+/// use {{ project-name | snake_case }}::config::Config;
 ///
 /// # fn main() -> anyhow::Result<()> {
 /// let config = Config::load()?;

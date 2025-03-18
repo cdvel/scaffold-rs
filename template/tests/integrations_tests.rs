@@ -3,7 +3,7 @@
 //! Unlike unit tests, these tests check the public API
 //! of the crate as a whole, as it would be used by other crates.
 
-use {{project-name}}::{add, divide};
+use {{ project-name | snake_case }}::{add, divide};
 
 #[test]
 fn test_arithmetic_operations() {

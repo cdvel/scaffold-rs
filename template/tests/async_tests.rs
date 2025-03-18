@@ -1,6 +1,6 @@
 #[cfg(feature = "async")]
 mod async_tests {
-    use {{project-name}}::async_utils::{delayed_timestamp, fetch_data};
+    use {{ project-name | snake_case }}::async_utils::{delayed_timestamp, fetch_data};
 
     #[tokio::test]
     async fn test_delayed_timestamp() {

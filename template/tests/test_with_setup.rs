@@ -2,7 +2,7 @@
 
 mod common;
 
-use {{project-name}}::add;
+use {{ project-name | snake_case }}::add;
 use common::setup;
 
 #[test]
