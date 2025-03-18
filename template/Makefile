@@ -20,3 +20,9 @@ doc:
 
 clean:
 	cargo clean
+
+async:
+	cargo build --features async
+
+test-async:
+	cargo test --features async

@@ -1,63 +1,80 @@
-/// Returns the sum of two numbers.
+//! # {{project-name}}
+//!
+//! `{{project-name}}` is a library that {{project-description}}.
+
+// Re-export core modules
+pub mod app;
+pub mod config;
+pub mod error;
+pub mod logging;
+
+// Feature-gated modules
+#[cfg(feature = "async")]
+pub mod async_utils;
+
+#[cfg(feature = "chrono")]
+pub mod time_utils;
+
+/// A simple example function that demonstrates error handling.
 ///
 /// # Examples
 ///
 /// ```
-/// use {{project-name}}::add;
+/// use {{project-name}}::calculate;
 ///
-/// assert_eq!(add(2, 2), 4);
+/// let result = calculate(10, 2, "divide").unwrap();
+/// assert_eq!(result, 5);
 /// ```
-pub fn add(a: i32, b: i32) -> i32 {
-    a + b
+pub fn calculate(a: i32, b: i32, operation: &str) -> error::Result<i32> {
+    match operation {
+        "add" => Ok(a + b),
+        "subtract" => Ok(a - b),
+        "multiply" => Ok(a * b),
+        "divide" => {
+            if b == 0 {
+                Err(error::Error::InvalidInput("Cannot divide by zero".into()))
+            } else {
+                Ok(a / b)
+            }
+        }
+        _ => Err(error::Error::InvalidOperation(format!(
+            "Unknown operation: {}",
+            operation
+        ))),
+    }
 }
 
-/// Divides the first number by the second.
-///
-/// # Examples
-///
-/// ```
-/// use {{project-name}}::divide;
-///
-/// assert_eq!(divide(10, 2), 5);
-/// ```
-///
-/// # Panics
-///
-/// Panics if the divisor is zero.
-///
-/// ```should_panic
-/// use {{project-name}}::divide;
-///
-/// divide(10, 0); // This will panic
-/// ```
-pub fn divide(a: i32, b: i32) -> i32 {
-    if b == 0 {
-        panic!("Cannot divide by zero");
-    }
-    a / b
-}
+// Convenient re-exports
+pub use app::App;
+#[cfg(feature = "chrono")]
+pub use time_utils::{current_timestamp, parse_timestamp};
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
-    fn test_add() {
-        assert_eq!(add(2, 2), 4);
-        assert_eq!(add(0, 0), 0);
-        assert_eq!(add(-2, 2), 0);
+    fn test_calculate_valid_operations() {
+        assert_eq!(calculate(5, 3, "add").unwrap(), 8);
+        assert_eq!(calculate(5, 3, "subtract").unwrap(), 2);
+        assert_eq!(calculate(5, 3, "multiply").unwrap(), 15);
+        assert_eq!(calculate(6, 3, "divide").unwrap(), 2);
     }
 
     #[test]
-    fn test_divide() {
-        assert_eq!(divide(10, 2), 5);
-        assert_eq!(divide(0, 1), 0);
-        assert_eq!(divide(-10, 2), -5);
+    fn test_calculate_division_by_zero() {
+        let result = calculate(5, 0, "divide");
+        assert!(result.is_err());
+        assert!(matches!(result.unwrap_err(), error::Error::InvalidInput(_)));
     }
 
     #[test]
-    #[should_panic(expected = "Cannot divide by zero")]
-    fn test_divide_by_zero() {
-        divide(10, 0);
+    fn test_calculate_invalid_operation() {
+        let result = calculate(5, 3, "power");
+        assert!(result.is_err());
+        assert!(matches!(
+            result.unwrap_err(),
+            error::Error::InvalidOperation(_)
+        ));
     }
 }
