@@ -8,6 +8,8 @@ license = "MIT"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+thiserror = "1.0" # For defining error types
+anyhow = "1.0"    # For error propagation
 
 [dev-dependencies]
 # mockall = "0.11.0"  # For mocking objs in tests
