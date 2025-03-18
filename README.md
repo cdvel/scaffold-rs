@@ -5,7 +5,7 @@ A custom template for [cargo generate](https://github.com/cargo-generate/cargo-g
 
 ## Enhancements
 
-- Structured test organization with examples of unit, integration, and doc tests
+- **Structured test organization**: with examples of unit, integration, and doc tests
 
 ```
 scaffold-rs/template/
@@ -19,9 +19,13 @@ scaffold-rs/template/
 └── Cargo.toml           (with dev-dependencies)
 ```
 
-
-- Pre-commit hooks configuration for code quality enforcement
-- Rust version specification via `.rust-version` file
+- **Pre-commit hooks**: for code quality enforcement
+- **Rust version explicit**: specification via `.rust-version` file
+- **Modern Error Handling**: Built-in `thiserror` and `anyhow` integration with error type definitions
+- **Command-Line Argument Parsing**: Ready-to-use CLI setup with `clap` derive feature
+- **Configuration Management**: Flexible config system using `config` and `serde` with environment variable support
+- **Structured Logging**: Preconfigured `tracing` setup for production-ready logging
+- **Convenient Makefile**: Common commands for build, test, lint, and documentation
 
 ## Usage
 
