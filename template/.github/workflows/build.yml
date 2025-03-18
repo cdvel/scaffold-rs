@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      PROJECT_NAME: rust-gh-example
+      PROJECT_NAME: ${{ github.event.repository.name }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -17,7 +17,7 @@ jobs:
         uses: cargo-generate/cargo-generate-action@v0.20.0
         with:
           name: ${{ env.PROJECT_NAME }}
-          template: template
+          path: template
           arguments: "--template-values-file .github/workflows/template_values.toml --verbose"
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable

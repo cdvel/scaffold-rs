@@ -24,7 +24,7 @@ chrono = { version = "0.4", features = ["serde"], optional = true }
 
 [features]
 default = []
-async = ["tokio", "crono"]
+async = ["tokio", "chrono"]
 
 [dev-dependencies]
 # mockall = "0.11.0"  # For mocking objs in tests
