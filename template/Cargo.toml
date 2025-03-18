@@ -8,11 +8,13 @@ license = "MIT"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-thiserror = "1.0"                                  # For defining error types
-anyhow = "1.0"                                     # For error propagation
-clap = { version = "4.4", features = ["derive"] }  # For easy cli creation
+thiserror = "1.0"                                                   # For defining error types
+anyhow = "1.0"                                                      # For error propagation
+clap = { version = "4.4", features = ["derive"] }                   # For easy cli creation
 config = "0.13"
 serde = { version = "1.0", features = ["derive"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 
 [dev-dependencies]
 # mockall = "0.11.0"  # For mocking objs in tests
