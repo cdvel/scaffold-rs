@@ -1,6 +1,6 @@
 # scaffold-rs
 
-A custom template for [cargo generate](https://github.com/cargo-generate/cargo-generate) based off [rust-github/template](https://github.com/rust-github/template)
+A custom template for [cargo generate](https://github.com/cargo-generate/cargo-generate) based off [rust-github/template](https://github.com/rust-github/template). Check [ARCHITECTURE.md](ARCHITECTURE.md) for details.
 
 
 ## Enhancements
