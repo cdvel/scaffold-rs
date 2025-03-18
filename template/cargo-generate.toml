@@ -12,10 +12,6 @@ regex = "^[A-Za-z0-9][A-Za-z0-9-]{0,38}$"
 type = "string"
 prompt = "Project description"
 
-[placeholders.module_name]
-type = "string"
-value = "{{ project-name | snake_case }}"
-
 [conditional.'crate_type == "lib"']
 ignore = ["src/main.rs"]
 
