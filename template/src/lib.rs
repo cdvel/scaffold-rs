@@ -8,6 +8,7 @@ pub mod cli;
 pub mod config;
 pub mod error;
 pub mod logging;
+use crate::error::Error;
 
 // Feature-gated modules
 #[cfg(feature = "async")]
@@ -33,12 +34,12 @@ pub fn calculate(a: i32, b: i32, operation: &str) -> error::Result<i32> {
         "multiply" => Ok(a * b),
         "divide" => {
             if b == 0 {
-                Err(error::Error::InvalidInput("Cannot divide by zero".into()))
+                Err(Error::InvalidInput("Cannot divide by zero".into()))
             } else {
                 Ok(a / b)
             }
         }
-        _ => Err(error::Error::InvalidOperation(format!(
+        _ => Err(Error::InvalidOperation(format!(
             "Unknown operation: {}",
             operation
         ))),
