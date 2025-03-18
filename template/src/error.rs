@@ -8,6 +8,15 @@ pub enum Error {
 
     #[error("Configuration error: {0}")]
     Config(String),
+
+    #[error("Invalid input: {0}")]
+    InvalidInput(String),
+
+    #[error("Invalid configuration: {0}")]
+    InvalidConfig(String),
+
+    #[error("Invalid operation: {0}")]
+    InvalidOperation(String),
     // Add more error variants here
 }
 
