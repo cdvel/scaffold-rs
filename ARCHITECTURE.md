@@ -68,3 +68,17 @@ graph TD
     style error fill:#e1a4a4
     style tests fill:#d8a4e1
 ```
+
+## Tests structure
+
+```
+scaffold-rs/template/
+├── src/
+│   └── lib.rs           (with unit tests, doc tests)
+├── tests/
+│   ├── common/
+│   │   └── mod.rs       (shared test utilities, setup/teardown)
+│   ├── integration_tests.rs (test public API)
+│   └── test_with_setup.rs
+└── Cargo.toml           (with dev-dependencies)
+```

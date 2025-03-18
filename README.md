@@ -1,7 +1,10 @@
 # scaffold-rs
 
-A custom template for [cargo generate](https://github.com/cargo-generate/cargo-generate) based off [rust-github/template](https://github.com/rust-github/template). Check [ARCHITECTURE.md](ARCHITECTURE.md) for details.
+A comprehensive, opinionated Rust project template for [cargo generate](https://github.com/cargo-generate/cargo-generate) that provides a robust foundation for both library and binary crates. This template extends [rust-github/template](https://github.com/rust-github/template) with additional structure and features to support a wide range of development use cases - from simple utilities to complex applications with async capabilities, configuration management, and structured error handling.
 
+Please review [ARCHITECTURE.md](ARCHITECTURE.md) for details about this template.
+
+To learn more about the details of how all of these pieces fit together, please consult this ARCHITECTURE.md document
 
 ## Enhancements
 
