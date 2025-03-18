@@ -15,6 +15,10 @@ config = "0.13"
 serde = { version = "1.0", features = ["derive"] }
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+# test-case = "3.1"       # For parameterized tests
+# rstest = "0.18"         # For test fixtures
+# tempfile = "3.8"        # For temp file creation in tests
+# criterion = "0.5"       # For benchmarking
 
 [dev-dependencies]
 # mockall = "0.11.0"  # For mocking objs in tests
