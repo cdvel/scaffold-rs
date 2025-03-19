@@ -1,6 +1,6 @@
-#[cfg(feature = "chrono")]
+#[cfg(feature = "async")]
 mod time_tests {
-    use crate::time_utils::{
+    use {{ project-name | snake_case }}::time_utils::{
         add_days, current_timestamp, days_between, from_unix_timestamp, parse_timestamp,
     };
     use chrono::{TimeZone, Utc};
