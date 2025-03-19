@@ -36,10 +36,9 @@ pub fn days_between(start: DateTime<Utc>, end: DateTime<Utc>) -> i64 {
 
 /// Convert a Unix timestamp to DateTime
 #[cfg(feature = "chrono")]
+#[cfg(feature = "chrono")]
 pub fn from_unix_timestamp(secs: i64) -> Result<DateTime<Utc>> {
-    let naive = DateTime::from_timestamp(secs, 0)
-        .ok_or_else(|| anyhow::anyhow!("Invalid timestamp"))?;
-    Ok(DateTime::from_naive_utc_and_offset(naive, Utc))
+    DateTime::from_timestamp(secs, 0).ok_or_else(|| anyhow::anyhow!("Invalid timestamp"))
 }
 
 /// Format a DateTime using a custom format string
