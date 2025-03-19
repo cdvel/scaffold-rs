@@ -1,7 +1,4 @@
 #[cfg(feature = "async")]
-use tokio;
-
-#[cfg(feature = "async")]
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     run_app()?;
