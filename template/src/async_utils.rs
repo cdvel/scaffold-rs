@@ -6,7 +6,7 @@
 use {
     chrono::{DateTime, Utc},
     tokio::time::{sleep, Duration},
-}
+};
 
 /// Example async function that demonstrates both tokio and chrono usage
 #[cfg(feature = "async")]
