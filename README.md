@@ -11,7 +11,7 @@ Please review [ARCHITECTURE.md](ARCHITECTURE.md) for details about this template
 - **Rust version explicit**: specification via `.rust-version` file
 - **Modern Error Handling**: Built-in `thiserror` and `anyhow` integration with error type definitions
 - **Command-Line Argument Parsing**: Ready-to-use CLI setup with `clap` derive feature
-- **Configuration Management**: Flexible config system using `config` and `serde` with environment variable support
+- **Configuration Management**: Flexible config system (`config`, `serde`) with environment variable support
 - **Structured Logging**: Preconfigured `tracing` setup for production-ready logging
 - **Convenient Makefile**: Common commands for build, test, lint, and documentation
 - **Async Support**: Optional `tokio` runtime integration for asynchronous applications
