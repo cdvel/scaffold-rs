@@ -5,7 +5,7 @@
 #[cfg(feature = "chrono")]
 use anyhow::Result;
 #[cfg(feature = "chrono")]
-use chrono::{DateTime, Duration, NaiveDateTime, Utc};
+use chrono::{DateTime, Duration, Utc};
 
 /// Returns the current UTC timestamp in RFC 3339 format
 #[cfg(feature = "chrono")]

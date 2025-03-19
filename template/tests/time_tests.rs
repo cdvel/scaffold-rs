@@ -1,10 +1,7 @@
-use {{ project-name | snake_case }}::time_utils;
-
 #[cfg(feature = "chrono")]
 mod time_tests {
-    use time_utils::{
-        current_timestamp, parse_timestamp,
-        add_days, days_between, from_unix_timestamp
+    use crate::time_utils::{
+        add_days, current_timestamp, days_between, from_unix_timestamp, parse_timestamp,
     };
     use chrono::{TimeZone, Utc};
 
