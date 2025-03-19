@@ -3,9 +3,10 @@
 //! This module is only compiled when the `async` feature is enabled.
 
 #[cfg(feature = "async")]
-use chrono::time::{DateTime, Utc};
-#[cfg(feature = "async")]
-use tokio::time::{sleep, Duration};
+use {
+    chrono::{DateTime, Utc},
+    tokio::time::{sleep, Duration},
+}
 
 /// Example async function that demonstrates both tokio and chrono usage
 #[cfg(feature = "async")]
