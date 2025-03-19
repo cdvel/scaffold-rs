@@ -2,7 +2,7 @@
 
 mod common;
 
-use {{ project-name | snake_case }}::add;
+use {{ project-name | snake_case }}::calculate;
 use common::setup;
 
 #[test]
@@ -15,7 +15,7 @@ fn test_with_environment() {
     assert!(test_env.run_test_operation());
 
     // Run the actual test
-    assert_eq!(add(3, 4), 7);
+    assert_eq!(calculate(3, 4, "sum").unwrap(), 7);
 
     // TestEnv::drop will be called automatically here
     // which will clean up the environment

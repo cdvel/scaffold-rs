@@ -3,7 +3,7 @@
 //! Unlike unit tests, these tests check the public API
 //! of the crate as a whole, as it would be used by other crates.
 
-use {{ project-name | snake_case }}::{add, divide};
+use {{ project-name | snake_case }}::calculate;
 
 #[test]
 fn test_arithmetic_operations() {
@@ -11,9 +11,9 @@ fn test_arithmetic_operations() {
     let a = 10;
     let b = 5;
 
-    let sum = add(a, b);
+    let sum = calculate(a, b, "sum").unwrap();
     assert_eq!(sum, 15);
 
-    let quotient = divide(sum, b);
+    let quotient = calculate(sum, b, "divide").unwrap();
     assert_eq!(quotient, 3);
 }
