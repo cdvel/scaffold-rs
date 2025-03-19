@@ -5,7 +5,7 @@
 #[cfg(feature = "chrono")]
 use anyhow::Result;
 #[cfg(feature = "chrono")]
-use chrono::{DateTime, Duration, NaiveDateTime, TimeZone, Utc};
+use chrono::{DateTime, Duration, NaiveDateTime, Utc};
 
 /// Returns the current UTC timestamp in RFC 3339 format
 #[cfg(feature = "chrono")]
@@ -37,9 +37,9 @@ pub fn days_between(start: DateTime<Utc>, end: DateTime<Utc>) -> i64 {
 /// Convert a Unix timestamp to DateTime
 #[cfg(feature = "chrono")]
 pub fn from_unix_timestamp(secs: i64) -> Result<DateTime<Utc>> {
-    let naive = NaiveDateTime::from_timestamp_opt(secs, 0)
+    let naive = DateTime::from_timestamp(secs, 0)
         .ok_or_else(|| anyhow::anyhow!("Invalid timestamp"))?;
-    Ok(DateTime::<Utc>::from_utc(naive, Utc))
+    Ok(DateTime::from_naive_utc_and_offset(naive, Utc))
 }
 
 /// Format a DateTime using a custom format string

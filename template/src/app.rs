@@ -19,7 +19,12 @@ use tracing::{debug, info};
 /// use {{ project-name | snake_case }}::config::Config;
 ///
 /// # fn main() -> anyhow::Result<()> {
-/// let config = Config::load()?;
+/// // Create a config directly for testing instead of loading from external sources
+/// let config = Config {
+///     database_url: "test:///db".to_string(),
+///     api_key: Some("test-key".to_string()),
+///     timeout_seconds: 30,
+/// };
 /// let app = App::new(config);
 /// app.run()?;
 /// # Ok(())

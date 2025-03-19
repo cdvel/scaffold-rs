@@ -15,7 +15,7 @@ fn test_with_environment() {
     assert!(test_env.run_test_operation());
 
     // Run the actual test
-    assert_eq!(calculate(3, 4, "sum").unwrap(), 7);
+    assert_eq!(calculate(3, 4, "add").unwrap(), 7);
 
     // TestEnv::drop will be called automatically here
     // which will clean up the environment

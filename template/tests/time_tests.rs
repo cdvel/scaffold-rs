@@ -1,10 +1,12 @@
+use {{ project-name | snake_case }}::time_utils;
+
 #[cfg(feature = "chrono")]
 mod time_tests {
-    use {{ project_name | snake_case }}::time_utils::{
+    use time_utils::{
         current_timestamp, parse_timestamp,
         add_days, days_between, from_unix_timestamp
     };
-    use chrono::{Utc, TimeZone};
+    use chrono::{TimeZone, Utc};
 
     #[test]
     fn test_timestamp_operations() {

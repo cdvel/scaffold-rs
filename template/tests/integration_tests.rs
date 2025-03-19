@@ -11,7 +11,7 @@ fn test_arithmetic_operations() {
     let a = 10;
     let b = 5;
 
-    let sum = calculate(a, b, "sum").unwrap();
+    let sum = calculate(a, b, "add").unwrap();
     assert_eq!(sum, 15);
 
     let quotient = calculate(sum, b, "divide").unwrap();
