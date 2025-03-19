@@ -15,7 +15,8 @@ pub async fn delayed_timestamp(delay_ms: u64) -> String {
 
     // Use chrono crate for timestamp
     let now: DateTime<Utc> = Utc::now();
-    format!("Current time (after {}ms delay): {}",
+    format!(
+        "Current time (after {}ms delay): {}",
         delay_ms,
         now.to_rfc3339()
     )
