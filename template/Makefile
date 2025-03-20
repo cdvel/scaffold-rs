@@ -21,7 +21,7 @@ doc:
 setup-hooks:
    pipx install pre-commit
    pre-commit install
-   precommit run --all-files
+   pre-commit run --all-files
 
 clean:
 	cargo clean
