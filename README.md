@@ -17,6 +17,7 @@ Please review [ARCHITECTURE.md](ARCHITECTURE.md) for details about this template
 - **Async Support**: Optional `tokio` runtime integration for asynchronous applications
 - **Time Handling**: Date/time utilities with `chrono` integration
 - **Feature Flags**: Conditional compilation for optional components like async and time utilities
+- **GitHub Actions**: Sufficient workflows for testing, linting, coverate, and security auditing
 
 ## Usage
 
