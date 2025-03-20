@@ -18,6 +18,11 @@ bench:
 doc:
 	cargo doc --no-deps --document-private-items --all-features --open
 
+setup-hooks:
+   pipx install pre-commit
+   pre-commit install
+   precommit run --all-files
+
 clean:
 	cargo clean
 
